@@ -5,16 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yu Hyeon Yeong - Product Designer Portfolio | 유현영 포트폴리오</title>
-    <meta name="description"
-        content="Freelance product designer specializing in 3D footwear, IoT, furniture design with sustainable concepts">
-    <meta property="og:title" content="Yu Hyeon Yeong - Product Designer Portfolio">
-    <meta property="og:description" content="Design for Everyone - Premium 3D Product Design Portfolio">
+    <meta name="description" content="프리랜서 제품 디자이너 유현영 - 신발, IoT, 가구 디자인 전문">
+    <meta property="og:title" content="Yu Hyeon Yeong - Product Designer">
+    <meta property="og:description" content="모두를 위한 디자인 - 3D 제품 포트폴리오">
     <meta property="og:image" content="https://portailor.github.io/designer-yhy/profile.jpg">
     <meta property="og:url" content="https://portailor.github.io/designer-yhy/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -22,53 +21,395 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        'display': ['Playfair Display', 'serif'],
+                        'serif': ['Montserrat', 'sans-serif'],
                         'sans': ['Noto Sans KR', 'sans-serif'],
+                    },
+                    colors: {
+                        'sage': '#5A7C7D',
+                        'gold': '#C9A86A',
+                        'cream': '#F5F1ED',
                     }
                 }
             }
         }
     </script>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Enhanced text readability */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Noto Sans KR', sans-serif;
             color: #2D2D2D;
-            line-height: 1.7;
+            line-height: 1.8;
+            background: #FFFBF9;
+            overflow-x: hidden;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+            hyphens: none;
+            animation: pageLoadFade 0.5s ease-in;
+        }
+
+        @keyframes pageLoadFade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Typography improvements */
+        p,
+        li,
+        span {
+            line-height: 1.8;
+            letter-spacing: 0.02em;
+            word-spacing: 0.05em;
+            margin-bottom: 1.5em;
         }
 
         h1,
         h2,
-        h3 {
-            font-family: 'Playfair Display', serif;
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.4;
+            letter-spacing: 0.01em;
+            word-break: keep-all;
         }
 
-        .gradient-bg-1 {
-            background: linear-gradient(135deg, #FFE5F1 0%, #E8D5FF 100%);
+        /* Optimal reading width */
+        .text-content {
+            max-width: 65ch;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .gradient-bg-2 {
-            background: linear-gradient(135deg, #FFF0F5 0%, #FFE8D6 100%);
+        /* Responsive text sizing */
+        @media (min-width: 1024px) {
+            body {
+                font-size: 18px;
+            }
         }
 
-        .gradient-text {
-            background: linear-gradient(135deg, #FFB6C1, #FF9999);
+        @media (min-width: 768px) and (max-width: 1023px) {
+            body {
+                font-size: 17px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            body {
+                font-size: 16px;
+            }
+
+            p,
+            li,
+            span {
+                line-height: 1.7;
+            }
+
+            .container {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
+        }
+
+        .gradient-hero {
+            background: linear-gradient(135deg, #FFE8F5 0%, #FFE5D6 25%, #E8D5FF 50%, #D5F5E8 75%, #FFE5F1 100%);
+        }
+
+        .gradient-section {
+            background: linear-gradient(180deg, #FFF5F0 0%, #F0F8FF 100%);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #5A7C7D, #C9A86A);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 182, 193, 0.2);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(90, 124, 125, 0.15);
         }
 
+        /* Scroll reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered children animation */
+        .stagger-children>* {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stagger-children.active>*:nth-child(1) {
+            transition-delay: 0.1s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.active>*:nth-child(2) {
+            transition-delay: 0.2s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.active>*:nth-child(3) {
+            transition-delay: 0.3s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.active>*:nth-child(4) {
+            transition-delay: 0.4s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.active>*:nth-child(5) {
+            transition-delay: 0.5s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.active>*:nth-child(6) {
+            transition-delay: 0.6s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.active>*:nth-child(7) {
+            transition-delay: 0.7s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.active>*:nth-child(8) {
+            transition-delay: 0.8s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.active>*:nth-child(9) {
+            transition-delay: 0.9s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.active>*:nth-child(10) {
+            transition-delay: 1.0s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.active>*:nth-child(11) {
+            transition-delay: 1.1s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.active>*:nth-child(12) {
+            transition-delay: 1.2s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Project card advanced hover */
         .project-card {
-            transition: all 0.4s;
+            background: white;
+            border: 1px solid rgba(90, 124, 125, 0.12);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+            overflow: hidden;
+            cursor: pointer;
         }
 
         .project-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(255, 153, 153, 0.3);
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(90, 124, 125, 0.2);
+            border-color: rgba(201, 168, 106, 0.4);
+        }
+
+        .project-card img {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Floating animation */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Pulse animation for buttons */
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .pulse-on-hover:hover {
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        /* Mobile touch feedback */
+        .touch-feedback:active {
+            transform: scale(0.98);
+            transition: transform 0.1s;
+        }
+
+        /* Mobile animation optimization */
+        @media (max-width: 767px) {
+            .reveal {
+                transform: translateY(25px);
+            }
+
+            .stagger-children>* {
+                transform: translateY(15px);
+            }
+
+            .project-card:hover {
+                transform: translateY(-8px) scale(1.02);
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 10000;
+            backdrop-filter: blur(20px);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content {
+            background: white;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 24px;
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.4s;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            background: rgba(90, 124, 125, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 10;
+        }
+
+        .modal-close:hover {
+            background: rgba(90, 124, 125, 0.2);
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        .modal-close svg {
+            width: 24px;
+            height: 24px;
+            stroke: #5A7C7D;
+            stroke-width: 2;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(60px) scale(0.95);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         @keyframes bounce {
@@ -79,42 +420,152 @@
             }
 
             50% {
-                transform: translateY(-10px);
+                transform: translateY(-15px);
             }
         }
 
-        .scroll-indicator {
+        .bounce {
             animation: bounce 2s infinite;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #5A7C7D, #C9A86A);
+            border-radius: 10px;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 0%;
+        }
+
+        .skill-progress.animate {
+            width: var(--target-width);
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        /* Hero cascade animations */
+        .hero-profile {
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeInScale 0.8s ease-out 0.2s forwards;
+        }
+
+        .hero-name {
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: fadeInLeft 0.8s ease-out 0.4s forwards;
+        }
+
+        .hero-title {
+            opacity: 0;
+            transform: translateX(50px);
+            animation: fadeInRight 0.8s ease-out 0.6s forwards;
+        }
+
+        .hero-desc {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out 0.8s forwards;
+        }
+
+        .hero-buttons {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUpBounce 1s ease-out 1s forwards;
+        }
+
+        @keyframes fadeInScale {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUpBounce {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            80% {
+                opacity: 1;
+                transform: translateY(-5px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Language toggle rotation */
+        #langToggle {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        #langToggle.rotate {
+            transform: rotate(180deg);
         }
     </style>
 </head>
 
 <body>
     <button id="langToggle"
-        class="fixed top-8 right-8 z-50 glass-card px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-110 transition">
+        class="fixed top-6 right-6 z-50 glass-card px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-110 transition float">
         <span id="langText">EN</span>
     </button>
 
-    <section class="min-h-screen gradient-bg-1 flex items-center justify-center">
-        <div class="container mx-auto px-6 text-center">
-            <img src="profile.jpg" alt="Profile"
-                class="w-48 h-48 rounded-full mx-auto mb-8 object-cover shadow-2xl ring-8 ring-white/50">
-            <h1 class="text-6xl md:text-8xl font-display font-bold mb-4" data-ko="유현영" data-en="YU HYEON YEONG">유현영</h1>
-            <p class="text-2xl md:text-3xl font-semibold mb-6 gradient-text" data-ko="제품 디자이너"
+    <section class="min-h-screen gradient-hero flex items-center justify-center relative">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <img src="profile.jpg" alt="Yu Hyeon Yeong"
+                class="w-56 h-56 rounded-full mx-auto mb-10 object-cover shadow-2xl ring-8 ring-white/60 hero-profile">
+            <h1 class="text-7xl md:text-9xl font-serif font-bold mb-4 text-sage hero-name" data-ko="유현영"
+                data-en="YU HYEON YEONG">유현영</h1>
+            <p class="text-3xl md:text-4xl font-serif mb-6 text-gold hero-title" data-ko="제품 디자이너"
                 data-en="Product Designer">제품 디자이너</p>
-            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-12" data-ko="다양한 색이 조화를 이루는 그라데이션처럼,<br>모두를 위한 디자인"
-                data-en="Design for Everyone,<br>Like Harmonious Gradient Colors">다양한 색이 조화를 이루는 그라데이션처럼,<br>모두를 위한 디자인
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <p class="text-lg md:text-xl max-w-4xl mx-auto mb-12 leading-relaxed hero-desc text-content"
+                data-ko="수 많은 색들이 한 공간에 공존하는 그라데이션처럼 각자 자신만의 색을 가지고 살아가지만 때에 맞게 어울려 살아가는, 모두를 위한 디자인을 하고자 합니다."
+                data-en="Like a gradient where countless colors coexist in one space, I aspire to create designs for everyone that harmonize beautifully while maintaining their unique identities.">
+                수 많은 색들이 한 공간에 공존하는 그라데이션처럼 각자 자신만의 색을 가지고 살아가지만 때에 맞게 어울려 살아가는, 모두를 위한 디자인을 하고자 합니다.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center hero-buttons">
                 <a href="#projects"
-                    class="glass-card px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition hover:scale-105"
+                    class="bg-sage text-white px-10 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition hover:scale-105 pulse-on-hover"
                     data-ko="프로젝트 보기" data-en="View Projects">프로젝트 보기</a>
-                <button id="downloadResume"
-                    class="bg-gradient-to-r from-pink-300 to-pink-400 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:scale-105 transition"
-                    data-ko="이력서 다운로드" data-en="Download Resume">이력서 다운로드</button>
+                <a href="유현영 포트폴리오 2026.pdf" download
+                    class="bg-gold text-white px-10 py-4 rounded-full font-semibold shadow-lg hover:scale-105 transition pulse-on-hover"
+                    data-ko="포트폴리오 다운로드" data-en="Download Portfolio">포트폴리오 다운로드</a>
             </div>
-            <div class="mt-16 scroll-indicator">
-                <svg class="w-8 h-8 mx-auto text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="mt-16 bounce">
+                <svg class="w-8 h-8 mx-auto text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                 </svg>
@@ -122,313 +573,340 @@
         </div>
     </section>
 
-    <section class="py-20 gradient-bg-2">
+    <section class="py-24 gradient-section">
         <div class="container mx-auto px-6">
-            <h2 class="text-5xl font-display font-bold text-center mb-16" data-ko="소개" data-en="About Me">소개</h2>
-            <div class="max-w-4xl mx-auto glass-card p-12 rounded-3xl shadow-xl">
-                <p class="text-lg mb-8"
-                    data-ko="저는 3D 제품 디자인을 전문으로 하는 프리랜서 디자이너입니다. 신발, IoT 디바이스, 가구, 조명 등 다양한 분야에서 개념과 철학이 명확한 디자인을 추구합니다. DIGILOG(디지털과 아날로그의 조화), 업사이클링, 배리어프리 등 지속가능하고 포용적인 가치를 담은 작품을 만듭니다."
-                    data-en="I am a freelance product designer specializing in 3D design across footwear, IoT devices, furniture, and lighting. I create concept-driven designs that embody values of DIGILOG, upcycling, and barrier-free accessibility for sustainable solutions.">
-                    저는 3D 제품 디자인을 전문으로 하는 프리랜서 디자이너입니다...</p>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-white/50 p-6 rounded-2xl">
-                        <h3 class="font-display font-semibold text-xl mb-3 gradient-text" data-ko="연락처"
-                            data-en="Contact">연락처</h3>
-                        <p><a href="mailto:gusdud4547@naver.com"
-                                class="text-pink-400 hover:underline">gusdud4547@naver.com</a></p>
-                        <p><a href="https://www.instagram.com/vita_felix___" target="_blank"
-                                class="text-pink-400 hover:underline">@vita_felix___</a></p>
-                    </div>
-                    <div class="bg-white/50 p-6 rounded-2xl">
-                        <h3 class="font-display font-semibold text-xl mb-3 gradient-text" data-ko="현재"
-                            data-en="Current">현재</h3>
-                        <p class="mb-2" data-ko="에이블리 스토어 운영 중" data-en="Operating Ably Store">에이블리 스토어 운영 중</p>
-                        <a href="https://mobile.a-bly.com/markets/82880/" target="_blank"
-                            class="text-pink-400 hover:underline text-sm">스토어 방문 →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 bg-[#FFFBF9]">
-        <div class="container mx-auto px-6">
-            <h2 class="text-5xl font-display font-bold text-center mb-16" data-ko="학력" data-en="Education">학력</h2>
-            <div class="max-w-3xl mx-auto glass-card p-8 rounded-3xl shadow-xl flex items-start gap-6">
-                <div class="bg-gradient-to-br from-pink-300 to-pink-400 text-white px-6 py-3 rounded-2xl font-semibold">
-                    2020-2024</div>
-                <div>
-                    <h3 class="font-display font-semibold text-2xl mb-2" data-ko="동의대학교" data-en="Dong-eui University">
-                        동의대학교</h3>
-                    <p data-ko="디자인조형학과 졸업" data-en="Department of Design & Formative Arts">디자인조형학과 졸업</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-20 bg-gradient-to-b from-[#FFFBF9] to-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-5xl font-display font-bold text-center mb-16" data-ko="프로젝트" data-en="Projects">프로젝트</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <div class="project-card glass-card rounded-3xl overflow-hidden shadow-xl">
-                    <div class="h-64 bg-gradient-to-br from-purple-200 to-pink-200"></div>
-                    <div class="p-6">
-                        <span
-                            class="inline-block bg-gradient-to-r from-pink-300 to-pink-400 text-white px-4 py-1 rounded-full text-sm mb-3">Product
-                            Design | IoT</span>
-                        <h3 class="font-display font-bold text-2xl mb-2">DIGILOG Surround Speaker</h3>
-                        <p class="text-sm text-gray-600 mb-2">2023</p>
-                        <p data-ko="디지털과 아날로그의 조화를 표현한 서라운드 스피커. 감성적 디자인과 기술의 융합."
-                            data-en="Surround speaker expressing harmony of digital and analog.">디지털과 아날로그의 조화를 표현한 서라운드
-                            스피커...</p>
-                    </div>
-                </div>
-
-                <div class="project-card glass-card rounded-3xl overflow-hidden shadow-xl">
-                    <div class="h-64 bg-gradient-to-br from-blue-200 to-green-200"></div>
-                    <div class="p-6">
-                        <span
-                            class="inline-block bg-gradient-to-r from-pink-300 to-pink-400 text-white px-4 py-1 rounded-full text-sm mb-3">Footwear
-                            Design</span>
-                        <h3 class="font-display font-bold text-2xl mb-2">CAITES Hybrid Shoes</h3>
-                        <p class="text-sm text-gray-600 mb-2">2023</p>
-                        <p data-ko="도심과 자연을 오가는 하이브리드 라이프스타일 슈즈."
-                            data-en="Hybrid lifestyle shoes for urban and nature transitions.">도심과 자연을 오가는 하이브리드 라이프스타일
-                            슈즈...</p>
-                    </div>
-                </div>
-
-                <div class="project-card glass-card rounded-3xl overflow-hidden shadow-xl">
-                    <div class="h-64 bg-gradient-to-br from-yellow-200 to-orange-200"></div>
-                    <div class="p-6">
-                        <span
-                            class="inline-block bg-gradient-to-r from-pink-300 to-pink-400 text-white px-4 py-1 rounded-full text-sm mb-3">Product
-                            Design | IoT</span>
-                        <h3 class="font-display font-bold text-2xl mb-2">PLAYTHING Pet IoT Device</h3>
-                        <p class="text-sm text-gray-600 mb-2">2023</p>
-                        <p data-ko="반려동물과 교감하는 스마트 IoT 디바이스." data-en="Smart IoT device for pet interaction.">반려동물과 교감하는
-                            스마트 IoT 디바이스...</p>
-                    </div>
-                </div>
-
-                <div class="project-card glass-card rounded-3xl overflow-hidden shadow-xl">
-                    <div class="h-64 bg-gradient-to-br from-green-200 to-teal-200"></div>
-                    <div class="p-6">
-                        <span
-                            class="inline-block bg-gradient-to-r from-pink-300 to-pink-400 text-white px-4 py-1 rounded-full text-sm mb-3">Footwear
-                            | Accessibility</span>
-                        <h3 class="font-display font-bold text-2xl mb-2">BARRIER FREE-R Shoes</h3>
-                        <p class="text-sm text-gray-600 mb-2">2023</p>
-                        <p data-ko="모든 사용자를 위한 배리어프리 스마트 슈즈." data-en="Barrier-free smart shoes for all users.">모든 사용자를
-                            위한 배리어프리 스마트 슈즈...</p>
-                    </div>
-                </div>
-
-                <div class="project-card glass-card rounded-3xl overflow-hidden shadow-xl">
-                    <div class="h-64 bg-gradient-to-br from-emerald-200 to-lime-200"></div>
-                    <div class="p-6">
-                        <span
-                            class="inline-block bg-gradient-to-r from-pink-300 to-pink-400 text-white px-4 py-1 rounded-full text-sm mb-3">Product
-                            | Sustainability</span>
-                        <h3 class="font-display font-bold text-2xl mb-2">Earth Saver Station</h3>
-                        <p class="text-sm text-gray-600 mb-2">2022</p>
-                        <p data-ko="공간별 맞춤형 업사이클링 분리수거함 시스템." data-en="Customized upcycling recycling station system.">
-                            공간별 맞춤형 업사이클링 분리수거함 시스템...</p>
-                    </div>
-                </div>
-
-                <div class="project-card glass-card rounded-3xl overflow-hidden shadow-xl">
-                    <div class="h-64 bg-gradient-to-br from-gray-200 to-slate-300"></div>
-                    <div class="p-6">
-                        <span
-                            class="inline-block bg-gradient-to-r from-pink-300 to-pink-400 text-white px-4 py-1 rounded-full text-sm mb-3">Furniture
-                            Design</span>
-                        <h3 class="font-display font-bold text-2xl mb-2">VID Chair</h3>
-                        <p class="text-sm text-gray-600 mb-2">2022</p>
-                        <p data-ko="미니멀한 기하학적 형태의 의자 디자인." data-en="Minimalist geometric chair design.">미니멀한 기하학적 형태의 의자
-                            디자인...</p>
-                    </div>
-                </div>
-
-                <div class="project-card glass-card rounded-3xl overflow-hidden shadow-xl">
-                    <div class="h-64 bg-gradient-to-br from-amber-200 to-yellow-200"></div>
-                    <div class="p-6">
-                        <span
-                            class="inline-block bg-gradient-to-r from-pink-300 to-pink-400 text-white px-4 py-1 rounded-full text-sm mb-3">Lighting
-                            Design</span>
-                        <h3 class="font-display font-bold text-2xl mb-2">LBL Lamp</h3>
-                        <p class="text-sm text-gray-600 mb-2">2022</p>
-                        <p data-ko="감성적 곡선과 빛의 조화를 표현한 조명."
-                            data-en="Lighting design expressing harmony of curves and light.">감성적 곡선과 빛의 조화를 표현한 조명...
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-card glass-card rounded-3xl overflow-hidden shadow-xl">
-                    <div class="h-64 bg-gradient-to-br from-green-300 to-emerald-200"></div>
-                    <div class="p-6">
-                        <span
-                            class="inline-block bg-gradient-to-r from-pink-300 to-pink-400 text-white px-4 py-1 rounded-full text-sm mb-3">Furniture
-                            Design</span>
-                        <h3 class="font-display font-bold text-2xl mb-2">SALVAN Chair</h3>
-                        <p class="text-sm text-gray-600 mb-2">2022</p>
-                        <p data-ko="자연 친화적 소재와 형태를 결합한 가구 디자인."
-                            data-en="Furniture design combining nature-friendly materials.">자연 친화적 소재와 형태를 결합한 가구 디자인...
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-card glass-card rounded-3xl overflow-hidden shadow-xl">
-                    <div class="h-64 bg-gradient-to-br from-red-200 to-pink-200"></div>
-                    <div class="p-6">
-                        <span
-                            class="inline-block bg-gradient-to-r from-pink-300 to-pink-400 text-white px-4 py-1 rounded-full text-sm mb-3">Stationery
-                            Design</span>
-                        <h3 class="font-display font-bold text-2xl mb-2">Faber-Castell Collaboration</h3>
-                        <p class="text-sm text-gray-600 mb-2">2022</p>
-                        <p data-ko="파버카스텔 브랜드 협업 문구 디자인 프로젝트."
-                            data-en="Faber-Castell brand collaboration stationery design.">파버카스텔 브랜드 협업 문구 디자인 프로젝트...
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-card glass-card rounded-3xl overflow-hidden shadow-xl">
-                    <div class="h-64 bg-gradient-to-br from-blue-300 to-indigo-200"></div>
-                    <div class="p-6">
-                        <span
-                            class="inline-block bg-gradient-to-r from-pink-300 to-pink-400 text-white px-4 py-1 rounded-full text-sm mb-3">Interior
-                            Design</span>
-                        <h3 class="font-display font-bold text-2xl mb-2">IKEA Co-Living Project</h3>
-                        <p class="text-sm text-gray-600 mb-2">2021</p>
-                        <p data-ko="이케아 코리빙 공간 설계 프로젝트." data-en="IKEA co-living space design project.">이케아 코리빙 공간 설계
-                            프로젝트...</p>
-                    </div>
-                </div>
-
-                <div class="project-card glass-card rounded-3xl overflow-hidden shadow-xl">
-                    <div class="h-64 bg-gradient-to-br from-teal-200 to-cyan-200"></div>
-                    <div class="p-6">
-                        <span
-                            class="inline-block bg-gradient-to-r from-pink-300 to-pink-400 text-white px-4 py-1 rounded-full text-sm mb-3">Footwear
-                            | Sustainability</span>
-                        <h3 class="font-display font-bold text-2xl mb-2">Shoe Upcycling Project</h3>
-                        <p class="text-sm text-gray-600 mb-2">2023</p>
-                        <p data-ko="폐기 신발 소재를 활용한 업사이클링 슈즈 디자인."
-                            data-en="Upcycling shoes design utilizing discarded materials.">폐기 신발 소재를 활용한 업사이클링 슈즈
-                            디자인...</p>
-                    </div>
-                </div>
-
-                <div class="project-card glass-card rounded-3xl overflow-hidden shadow-xl">
-                    <div class="h-64 bg-gradient-to-br from-pink-300 to-rose-200"></div>
-                    <div class="p-6">
-                        <span
-                            class="inline-block bg-gradient-to-r from-pink-300 to-pink-400 text-white px-4 py-1 rounded-full text-sm mb-3">Product
-                            | Commercial</span>
-                        <h3 class="font-display font-bold text-2xl mb-2">Phone & AirPods Cases</h3>
-                        <p class="text-sm text-gray-600 mb-2">2024-Present</p>
-                        <p class="mb-3" data-ko="직접 디자인하여 판매 중인 핸드폰·에어팟 케이스 컬렉션."
-                            data-en="Self-designed phone and AirPods case collection.">직접 디자인하여 판매 중인 케이스 컬렉션...</p>
-                        <a href="https://mobile.a-bly.com/markets/82880/" target="_blank"
-                            class="text-pink-400 hover:underline font-semibold" data-ko="구매하기 →"
-                            data-en="Shop Now →">구매하기 →</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 gradient-bg-2">
-        <div class="container mx-auto px-6">
-            <h2 class="text-5xl font-display font-bold text-center mb-16" data-ko="수상 경력" data-en="Awards">수상 경력</h2>
-            <div class="max-w-4xl mx-auto space-y-6">
-                <div class="glass-card p-6 rounded-3xl shadow-xl flex items-start gap-6">
-                    <div
-                        class="bg-gradient-to-br from-pink-300 to-pink-400 text-white px-5 py-2 rounded-2xl font-bold text-xl">
-                        2023</div>
-                    <div>
-                        <h3 class="font-display font-semibold text-xl" data-ko="한국신발디자인어워드 패션화 부문 입선"
-                            data-en="Korea Footwear Design Award - Fashion Finalist">한국신발디자인어워드 패션화 부문 입선</h3>
-                    </div>
-                </div>
-                <div class="glass-card p-6 rounded-3xl shadow-xl flex items-start gap-6">
-                    <div
-                        class="bg-gradient-to-br from-pink-300 to-pink-400 text-white px-5 py-2 rounded-2xl font-bold text-xl">
-                        2022</div>
-                    <div>
-                        <h3 class="font-display font-semibold text-xl" data-ko="한국신발디자인어워드 운동화 부문 입선"
-                            data-en="Korea Footwear Design Award - Sneaker Finalist">한국신발디자인어워드 운동화 부문 입선</h3>
-                    </div>
-                </div>
-                <div class="glass-card p-6 rounded-3xl shadow-xl flex items-start gap-6">
-                    <div
-                        class="bg-gradient-to-br from-pink-300 to-pink-400 text-white px-5 py-2 rounded-2xl font-bold text-xl">
-                        2022</div>
-                    <div>
-                        <h3 class="font-display font-semibold text-xl" data-ko="한국신발디자인어워드 패션화 부문 입선"
-                            data-en="Korea Footwear Design Award - Fashion Finalist">한국신발디자인어워드 패션화 부문 입선</h3>
-                    </div>
-                </div>
-                <div class="glass-card p-6 rounded-3xl shadow-xl flex items-start gap-6">
-                    <div
-                        class="bg-gradient-to-br from-pink-300 to-pink-400 text-white px-5 py-2 rounded-2xl font-bold text-xl">
-                        2020</div>
-                    <div>
-                        <h3 class="font-display font-semibold text-xl" data-ko="한국옥외광고공모전 장려상"
-                            data-en="Korea Outdoor Advertising Competition - Award">한국옥외광고공모전 장려상</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 gradient-bg-1">
-        <div class="container mx-auto px-6">
-            <h2 class="text-5xl font-display font-bold text-center mb-16" data-ko="연락하기" data-en="Get In Touch">연락하기
+            <h2 class="text-6xl font-serif font-bold text-center mb-20 text-sage reveal" data-ko="소개" data-en="About">소개
             </h2>
-            <div class="max-w-4xl mx-auto glass-card p-12 rounded-3xl shadow-xl">
-                <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div class="max-w-5xl mx-auto glass-card p-14 rounded-3xl shadow-xl reveal">
+                <p class="text-xl mb-10 leading-relaxed text-center text-content">디지털과 아날로그가 조화를 이루는 그라데이션처럼, 저는 모든 사람을
+                    위한 디자인을 만듭니다. 신발부터 IoT 디바이스, 가구, 조명까지 다양한 제품 디자인에서 지속가능성과 접근성을 중심에 두고 작업합니다. 업사이클링, 배리어프리, DIGILOG
+                    철학을 통해 환경과 사람을 먼저 생각하는 디자인을 실현하며, 각 프로젝트에 명확한 개념과 스토리를 담아 실용성과 감성을 동시에 전달합니다.</p>
+                <div class="grid md:grid-cols-3 gap-8 mt-12 stagger-children">
+                    <div class="text-center p-6 bg-gradient-to-br from-sage/5 to-gold/5 rounded-2xl">
+                        <h3 class="font-serif font-semibold text-2xl mb-3 text-sage" data-ko="연락처" data-en="Contact">연락처
+                        </h3>
+                        <p class="mb-2"><a href="mailto:gusdud4547@naver.com"
+                                class="text-gold hover:underline">gusdud4547@naver.com</a></p>
+                        <p><a href="https://www.instagram.com/vita_felix___" target="_blank"
+                                class="text-gold hover:underline">@vita_felix___</a></p>
+                        <p class="mt-2 text-sm">010-1758-1923</p>
+                    </div>
+                    <div class="text-center p-6 bg-gradient-to-br from-sage/5 to-gold/5 rounded-2xl">
+                        <h3 class="font-serif font-semibold text-2xl mb-3 text-sage" data-ko="현재" data-en="Current">현재
+                        </h3>
+                        <p class="mb-2">에이블리 스토어 운영 중</p>
+                        <a href="https://mobile.a-bly.com/markets/82880/" target="_blank"
+                            class="text-gold hover:underline">스토어 방문 →</a>
+                    </div>
+                    <div class="text-center p-6 bg-gradient-to-br from-sage/5 to-gold/5 rounded-2xl">
+                        <h3 class="font-serif font-semibold text-2xl mb-3 text-sage" data-ko="주소" data-en="Address">주소
+                        </h3>
+                        <p>부산 해운대구</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-cream">
+        <div class="container mx-auto px-6">
+            <h2 class="text-6xl font-serif font-bold text-center mb-16 text-sage reveal" data-ko="학력"
+                data-en="Education">학력</h2>
+            <div class="max-w-3xl mx-auto glass-card p-8 rounded-3xl shadow-xl flex items-start gap-6 reveal">
+                <div class="bg-sage text-white px-6 py-3 rounded-2xl font-semibold">2020-2024</div>
+                <div>
+                    <h3 class="font-serif font-semibold text-2xl mb-2">동의대학교</h3>
+                    <p>디자인조형학과 졸업</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 gradient-section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-6xl font-serif font-bold text-center mb-16 text-sage reveal" data-ko="기술" data-en="Skills">
+                기술</h2>
+            <div class="max-w-4xl mx-auto space-y-6 stagger-children">
+                <div class="glass-card p-6 rounded-2xl skill-item">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold text-lg">Adobe Illustrator</span>
+                        <span class="text-sage">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90"></div>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl skill-item">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold text-lg">Adobe Photoshop</span>
+                        <span class="text-sage">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90"></div>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl skill-item">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold text-lg">Rhino</span>
+                        <span class="text-sage">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85"></div>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl skill-item">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold text-lg">KeyShot</span>
+                        <span class="text-sage">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85"></div>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl skill-item">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-semibold text-lg">AutoCAD</span>
+                        <span class="text-sage">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-cream">
+        <div class="container mx-auto px-6">
+            <h2 class="text-6xl font-serif font-bold text-center mb-20 text-sage reveal" data-ko="프로젝트"
+                data-en="Projects">프로젝트</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 stagger-children">
+                <div class="project-card rounded-3xl overflow-hidden shadow-xl" onclick="openModal(0)">
+                    <img src="as2.jpg" alt="AROUND speaker" class="h-72 w-full object-cover">
+                    <div class="p-8">
+                        <span
+                            class="inline-block bg-sage/10 text-sage px-4 py-1 rounded-full text-sm mb-4 font-semibold">Product
+                            Design | IoT</span>
+                        <h3 class="font-serif font-bold text-3xl mb-3 text-sage">AROUND speaker</h3>
+                        <p class="text-sm text-gray-500 mb-3">2023</p>
+                        <p class="text-content">디지털과 아날로그의 조화를 표현한 DIGILOG 개념의 서라운드 스피커</p>
+                    </div>
+                </div>
+
+                <div class="project-card rounded-3xl overflow-hidden shadow-xl" onclick="openModal(1)">
+                    <div class="h-72 bg-gradient-to-br from-blue-200 to-green-200"></div>
+                    <div class="p-8">
+                        <span
+                            class="inline-block bg-sage/10 text-sage px-4 py-1 rounded-full text-sm mb-4 font-semibold">Footwear
+                            Design</span>
+                        <h3 class="font-serif font-bold text-3xl mb-3 text-sage">CAITES Hybrid Shoes</h3>
+                        <p class="text-sm text-gray-500 mb-3">2023</p>
+                        <p class="text-content">도심과 자연을 오가는 하이브리드 라이프스타일 슈즈</p>
+                    </div>
+                </div>
+
+                <div class="project-card rounded-3xl overflow-hidden shadow-xl" onclick="openModal(2)">
+                    <div class="h-72 bg-gradient-to-br from-yellow-200 to-orange-200"></div>
+                    <div class="p-8">
+                        <span
+                            class="inline-block bg-sage/10 text-sage px-4 py-1 rounded-full text-sm mb-4 font-semibold">Product
+                            Design | IoT</span>
+                        <h3 class="font-serif font-bold text-3xl mb-3 text-sage">PLAYTHING</h3>
+                        <p class="text-sm text-gray-500 mb-3">2023</p>
+                        <p class="text-content">반려동물과 교감하는 스마트 IoT 디바이스</p>
+                    </div>
+                </div>
+
+                <div class="project-card rounded-3xl overflow-hidden shadow-xl" onclick="openModal(3)">
+                    <div class="h-72 bg-gradient-to-br from-green-200 to-teal-200"></div>
+                    <div class="p-8">
+                        <span
+                            class="inline-block bg-sage/10 text-sage px-4 py-1 rounded-full text-sm mb-4 font-semibold">Footwear
+                            | Accessibility</span>
+                        <h3 class="font-serif font-bold text-3xl mb-3 text-sage">BARRIER FREE-R</h3>
+                        <p class="text-sm text-gray-500 mb-3">2023</p>
+                        <p class="text-content">모든 사용자를 위한 배리어프리 스마트 슈즈</p>
+                    </div>
+                </div>
+
+                <div class="project-card rounded-3xl overflow-hidden shadow-xl" onclick="openModal(4)">
+                    <div class="h-72 bg-gradient-to-br from-emerald-200 to-lime-200"></div>
+                    <div class="p-8">
+                        <span
+                            class="inline-block bg-sage/10 text-sage px-4 py-1 rounded-full text-sm mb-4 font-semibold">Product
+                            | Sustainability</span>
+                        <h3 class="font-serif font-bold text-3xl mb-3 text-sage">Earth Saver</h3>
+                        <p class="text-sm text-gray-500 mb-3">2022</p>
+                        <p class="text-content">공간별 맞춤형 업사이클링 분리수거함 시스템</p>
+                    </div>
+                </div>
+
+                <div class="project-card rounded-3xl overflow-hidden shadow-xl" onclick="openModal(5)">
+                    <div class="h-72 bg-gradient-to-br from-gray-200 to-slate-300"></div>
+                    <div class="p-8">
+                        <span
+                            class="inline-block bg-sage/10 text-sage px-4 py-1 rounded-full text-sm mb-4 font-semibold">Furniture
+                            Design</span>
+                        <h3 class="font-serif font-bold text-3xl mb-3 text-sage">VID Chair</h3>
+                        <p class="text-sm text-gray-500 mb-3">2022</p>
+                        <p class="text-content">미니멀한 기하학적 형태의 의자 디자인</p>
+                    </div>
+                </div>
+
+                <div class="project-card rounded-3xl overflow-hidden shadow-xl" onclick="openModal(6)">
+                    <div class="h-72 bg-gradient-to-br from-amber-200 to-yellow-200"></div>
+                    <div class="p-8">
+                        <span
+                            class="inline-block bg-sage/10 text-sage px-4 py-1 rounded-full text-sm mb-4 font-semibold">Lighting
+                            Design</span>
+                        <h3 class="font-serif font-bold text-3xl mb-3 text-sage">LBL Lamp</h3>
+                        <p class="text-sm text-gray-500 mb-3">2022</p>
+                        <p class="text-content">감성적 곡선과 빛의 조화를 표현한 조명</p>
+                    </div>
+                </div>
+
+                <div class="project-card rounded-3xl overflow-hidden shadow-xl" onclick="openModal(7)">
+                    <div class="h-72 bg-gradient-to-br from-green-300 to-emerald-200"></div>
+                    <div class="p-8">
+                        <span
+                            class="inline-block bg-sage/10 text-sage px-4 py-1 rounded-full text-sm mb-4 font-semibold">Furniture
+                            Design</span>
+                        <h3 class="font-serif font-bold text-3xl mb-3 text-sage">SALVAN Chair</h3>
+                        <p class="text-sm text-gray-500 mb-3">2022</p>
+                        <p class="text-content">자연 친화적 소재와 형태를 결합한 가구</p>
+                    </div>
+                </div>
+
+                <div class="project-card rounded-3xl overflow-hidden shadow-xl" onclick="openModal(8)">
+                    <div class="h-72 bg-gradient-to-br from-red-200 to-pink-200"></div>
+                    <div class="p-8">
+                        <span
+                            class="inline-block bg-sage/10 text-sage px-4 py-1 rounded-full text-sm mb-4 font-semibold">Stationery
+                            Design</span>
+                        <h3 class="font-serif font-bold text-3xl mb-3 text-sage">Faber-Castell</h3>
+                        <p class="text-sm text-gray-500 mb-3">2022</p>
+                        <p class="text-content">파버카스텔 브랜드 협업 문구 디자인</p>
+                    </div>
+                </div>
+
+                <div class="project-card rounded-3xl overflow-hidden shadow-xl" onclick="openModal(9)">
+                    <div class="h-72 bg-gradient-to-br from-blue-300 to-indigo-200"></div>
+                    <div class="p-8">
+                        <span
+                            class="inline-block bg-sage/10 text-sage px-4 py-1 rounded-full text-sm mb-4 font-semibold">Interior
+                            Design</span>
+                        <h3 class="font-serif font-bold text-3xl mb-3 text-sage">IKEA Co-Living</h3>
+                        <p class="text-sm text-gray-500 mb-3">2021</p>
+                        <p class="text-content">이케아 코리빙 공간 설계 프로젝트</p>
+                    </div>
+                </div>
+
+                <div class="project-card rounded-3xl overflow-hidden shadow-xl" onclick="openModal(10)">
+                    <div class="h-72 bg-gradient-to-br from-teal-200 to-cyan-200"></div>
+                    <div class="p-8">
+                        <span
+                            class="inline-block bg-sage/10 text-sage px-4 py-1 rounded-full text-sm mb-4 font-semibold">Footwear
+                            | Sustainability</span>
+                        <h3 class="font-serif font-bold text-3xl mb-3 text-sage">Shoe Upcycling</h3>
+                        <p class="text-sm text-gray-500 mb-3">2023</p>
+                        <p class="text-content">폐기 신발 소재를 활용한 업사이클링 슈즈</p>
+                    </div>
+                </div>
+
+                <div class="project-card rounded-3xl overflow-hidden shadow-xl" onclick="openModal(11)">
+                    <div class="h-72 bg-gradient-to-br from-pink-300 to-rose-200"></div>
+                    <div class="p-8">
+                        <span
+                            class="inline-block bg-sage/10 text-sage px-4 py-1 rounded-full text-sm mb-4 font-semibold">Product
+                            | Commercial</span>
+                        <h3 class="font-serif font-bold text-3xl mb-3 text-sage">Phone & AirPods Cases</h3>
+                        <p class="text-sm text-gray-500 mb-3">2024-Present</p>
+                        <p class="text-content">직접 디자인하여 판매 중인 케이스 컬렉션</p>
+                        <a href="https://mobile.a-bly.com/markets/82880/" target="_blank"
+                            class="text-gold hover:underline font-semibold mt-2 inline-block">구매하기 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 gradient-section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-6xl font-serif font-bold text-center mb-16 text-sage reveal" data-ko="수상 경력"
+                data-en="Awards">수상 경력</h2>
+            <div class="max-w-4xl mx-auto space-y-6 stagger-children">
+                <div class="glass-card p-6 rounded-3xl shadow-xl flex items-start gap-6">
+                    <div class="bg-sage text-white px-5 py-2 rounded-2xl font-bold text-xl">2023</div>
+                    <div>
+                        <h3 class="font-serif font-semibold text-xl">한국신발디자인어워드 패션화 부문 입선</h3>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-3xl shadow-xl flex items-start gap-6">
+                    <div class="bg-sage text-white px-5 py-2 rounded-2xl font-bold text-xl">2022</div>
+                    <div>
+                        <h3 class="font-serif font-semibold text-xl">한국신발디자인어워드 운동화 부문 입선</h3>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-3xl shadow-xl flex items-start gap-6">
+                    <div class="bg-sage text-white px-5 py-2 rounded-2xl font-bold text-xl">2022</div>
+                    <div>
+                        <h3 class="font-serif font-semibold text-xl">한국신발디자인어워드 패션화 부문 입선</h3>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-3xl shadow-xl flex items-start gap-6">
+                    <div class="bg-sage text-white px-5 py-2 rounded-2xl font-bold text-xl">2020</div>
+                    <div>
+                        <h3 class="font-serif font-semibold text-xl">한국옥외광고공모전 장려상</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-cream">
+        <div class="container mx-auto px-6">
+            <h2 class="text-6xl font-serif font-bold text-center mb-16 text-sage reveal" data-ko="연락하기"
+                data-en="Get In Touch">연락하기</h2>
+            <div class="max-w-4xl mx-auto glass-card p-12 rounded-3xl shadow-xl reveal">
+                <div class="grid md:grid-cols-3 gap-8 text-center stagger-children">
                     <a href="mailto:gusdud4547@naver.com" class="group">
                         <div
-                            class="bg-gradient-to-br from-pink-300 to-pink-400 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            class="bg-sage/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                            <svg class="w-10 h-10 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
                                 </path>
                             </svg>
                         </div>
-                        <h3 class="font-display font-semibold text-xl mb-2">Email</h3>
-                        <p class="text-pink-400 group-hover:underline text-sm">gusdud4547@naver.com</p>
+                        <h3 class="font-serif font-semibold text-xl mb-2">Email</h3>
+                        <p class="text-gold group-hover:underline text-sm">gusdud4547@naver.com</p>
                     </a>
                     <a href="https://www.instagram.com/vita_felix___" target="_blank" class="group">
                         <div
-                            class="bg-gradient-to-br from-pink-300 to-pink-400 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            class="bg-sage/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                            <svg class="w-10 h-10 text-sage" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                             </svg>
                         </div>
-                        <h3 class="font-display font-semibold text-xl mb-2">Instagram</h3>
-                        <p class="text-pink-400 group-hover:underline">@vita_felix___</p>
+                        <h3 class="font-serif font-semibold text-xl mb-2">Instagram</h3>
+                        <p class="text-gold group-hover:underline">@vita_felix___</p>
                     </a>
                     <a href="https://mobile.a-bly.com/markets/82880/" target="_blank" class="group">
                         <div
-                            class="bg-gradient-to-br from-pink-300 to-pink-400 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
-                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            class="bg-sage/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                            <svg class="w-10 h-10 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                             </svg>
                         </div>
-                        <h3 class="font-display font-semibold text-xl mb-2" data-ko="온라인 스토어" data-en="Store">온라인 스토어
-                        </h3>
-                        <p class="text-pink-400 group-hover:underline" data-ko="방문하기" data-en="Visit">방문하기</p>
+                        <h3 class="font-serif font-semibold text-xl mb-2" data-ko="온라인 스토어" data-en="Store">온라인 스토어</h3>
+                        <p class="text-gold group-hover:underline" data-ko="방문하기" data-en="Visit">방문하기</p>
                     </a>
                 </div>
                 <div class="mt-12 text-center">
                     <button id="downloadVCard"
-                        class="bg-gradient-to-r from-pink-300 to-pink-400 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:scale-105 transition"
+                        class="bg-gold text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:scale-105 transition pulse-on-hover"
                         data-ko="vCard 다운로드" data-en="Download vCard">vCard 다운로드</button>
                 </div>
             </div>
@@ -439,16 +917,44 @@
         <div class="container mx-auto px-6 text-center">
             <p>&copy; 2026 Yu Hyeon Yeong. All rights reserved.</p>
             <p class="text-sm text-gray-400 mt-2">Powered by <a href="#"
-                    class="text-pink-300 hover:underline font-display">Portailor</a></p>
+                    class="text-gold hover:underline font-serif">Portailor</a></p>
         </div>
     </footer>
 
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-close" onclick="closeModal()">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </div>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
     <script>
+        const projectData = [
+            { title: "AROUND speaker", year: "2023", category: "Product Design | IoT", image: "as1.jpg", descKo: "지금의 디지털 기기와 제품들은 기능 뿐만 아니라 가구, 인테리어로서의 역할 또한 추구되는 디자인 동향을 볼 수 있다. 디지털과 아날로그의 합성어 '디지로그'를 컨셉으로 디지털 기능에 아날로그 디자인을 돋보인 서라운드 스피커를 디자인", descEn: "Current digital devices pursue not only functionality but also roles as furniture and interior design. With the concept of 'DIGILOG' (combination of digital and analog), designed a surround speaker featuring analog aesthetics with digital functionality" },
+            { title: "CAITES Hybrid Shoes", year: "2023", category: "Footwear Design", descKo: "도심과 자연을 오가는 하이브리드 라이프스타일 슈즈. 다양한 컬러 옵션으로 개성을 표현할 수 있습니다.", descEn: "Hybrid lifestyle shoes for urban and nature transitions with diverse color options for personal expression." },
+            { title: "PLAYTHING", year: "2023", category: "Product Design | IoT", descKo: "반려동물과 교감하는 스마트 IoT 디바이스. 놀이와 케어를 동시에 제공합니다.", descEn: "Smart IoT device for pet interaction, combining play and care functions." },
+            { title: "BARRIER FREE-R", year: "2023", category: "Footwear | Accessibility", descKo: "모든 사용자를 위한 배리어프리 스마트 슈즈. 착용 편의성과 IoT 기능을 결합했습니다.", descEn: "Barrier-free smart shoes for all users, combining wearing convenience with IoT features." },
+            { title: "Earth Saver", year: "2022", category: "Product | Sustainability", descKo: "공간별 맞춤형 업사이클링 분리수거함 시스템. 지속가능한 환경을 위한 디자인입니다.", descEn: "Customized upcycling recycling station system for various spaces, designed for sustainability." },
+            { title: "VID Chair", year: "2022", category: "Furniture Design", descKo: "미니멀한 기하학적 형태의 의자 디자인. 편안함과 심미성의 조화를 추구합니다.", descEn: "Minimalist geometric chair design balancing comfort and aesthetics." },
+            { title: "LBL Lamp", year: "2022", category: "Lighting Design", descKo: "감성적 곡선과 빛의 조화를 표현한 조명 디자인입니다.", descEn: "Lighting design expressing harmony of emotional curves and light." },
+            { title: "SALVAN Chair", year: "2022", category: "Furniture Design", descKo: "자연 친화적 소재와 형태를 결합한 가구 디자인입니다.", descEn: "Furniture design combining nature-friendly materials and forms." },
+            { title: "Faber-Castell", year: "2022", category: "Stationery Design", descKo: "파버카스텔 브랜드 협업 문구 디자인 프로젝트입니다.", descEn: "Faber-Castell brand collaboration stationery design project." },
+            { title: "IKEA Co-Living", year: "2021", category: "Interior Design", descKo: "이케아 코리빙 공간 설계 프로젝트. 공유 생활을 위한 최적화된 공간입니다.", descEn: "IKEA co-living space design project optimized for shared living." },
+            { title: "Shoe Upcycling", year: "2023", category: "Footwear | Sustainability", descKo: "폐기 신발 소재를 활용한 업사이클링 슈즈 디자인입니다.", descEn: "Upcycling shoes design utilizing discarded shoe materials." },
+            { title: "Phone & AirPods Cases", year: "2024-Present", category: "Product | Commercial", descKo: "직접 디자인하여 판매 중인 핸드폰·에어팟 케이스 컬렉션입니다.", descEn: "Self-designed phone and AirPods case collection currently on sale." }
+        ];
+
         let currentLang = 'ko';
         const langToggle = document.getElementById('langToggle');
         const langText = document.getElementById('langText');
 
         langToggle.addEventListener('click', () => {
+            langToggle.classList.add('rotate');
+            setTimeout(() => langToggle.classList.remove('rotate'), 300);
             currentLang = currentLang === 'ko' ? 'en' : 'ko';
             langText.textContent = currentLang === 'ko' ? 'EN' : 'KR';
             document.querySelectorAll('[data-ko]').forEach(el => {
@@ -465,10 +971,6 @@
             });
         }
 
-        document.getElementById('downloadResume').addEventListener('click', () => {
-            window.open('resume.pdf', '_blank');
-        });
-
         document.getElementById('downloadVCard').addEventListener('click', () => {
             const vcard = `BEGIN:VCARD
 VERSION:3.0
@@ -478,6 +980,7 @@ EMAIL:gusdud4547@naver.com
 URL:https://www.instagram.com/vita_felix___
 URL:https://mobile.a-bly.com/markets/82880/
 TITLE:Product Designer
+TEL:010-1758-1923
 END:VCARD`;
             const blob = new Blob([vcard], { type: 'text/vcard' });
             const url = URL.createObjectURL(blob);
@@ -487,20 +990,89 @@ END:VCARD`;
             a.click();
         });
 
-        const observer = new IntersectionObserver(entries => {
+        // Scroll reveal observer
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.reveal, .stagger-children').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Mobile touch feedback
+        if ('ontouchstart' in window) {
+            document.querySelectorAll('.project-card, button, a').forEach(el => {
+                el.classList.add('touch-feedback');
+            });
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        document.querySelectorAll('.project-card, .glass-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.8s, transform 0.8s';
-            observer.observe(el);
+        //Skill bar animation on scroll
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBar = entry.target.querySelector('.skill-progress');
+                    if (progressBar && !progressBar.classList.contains('animate')) {
+                        const targetWidth = progressBar.getAttribute('data-width');
+                        progressBar.style.setProperty('--target-width', targetWidth + '%');
+                        progressBar.classList.add('animate');
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.skill-item').forEach(el => {
+            skillObserver.observe(el);
+        });
+
+        function openModal(index) {
+            const project = projectData[index];
+            const modal = document.getElementById('projectModal');
+            const modalBody = document.getElementById('modalBody');
+            const desc = currentLang === 'ko' ? project.descKo : project.descEn;
+            let imageHTML = project.image ? `<img src="${project.image}" alt="${project.title}" class="w-full rounded-t-3xl">` : '';
+            modalBody.innerHTML = `
+${imageHTML}
+<div class="p-10">
+<span class="inline-block bg-sage/10 text-sage px-4 py-2 rounded-full text-sm mb-4 font-semibold">${project.category}</span>
+<h2 class="text-5xl font-serif font-bold mb-4 text-sage">${project.title}</h2>
+<p class="text-gold text-lg mb-6">${project.year}</p>
+<p class="text-lg leading-relaxed text-content">${desc}</p>
+</div>
+`;
+            modal.classList.add('active');
+            document.body.classList.add('modal-open');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        document.getElementById('projectModal').addEventListener('click', (e) => {
+            if (e.target.id === 'projectModal') closeModal();
         });
     </script>
 </body>
