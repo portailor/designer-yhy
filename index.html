@@ -113,6 +113,17 @@
             margin-right: auto;
         }
 
+        /* About section optimization */
+        .about-text {
+            max-width: 85ch;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .about-card {
+            padding: 2.5rem;
+        }
+
         /* Responsive text sizing */
         @media (min-width: 1024px) {
             body {
@@ -143,9 +154,14 @@
             }
 
             .about-text {
-                font-size: 15px;
+                font-size: 14px;
                 line-height: 1.6;
                 margin-bottom: 1em;
+                max-width: 90ch;
+            }
+
+            .about-card {
+                padding: 1.5rem;
             }
 
             .py-24 {
@@ -602,7 +618,7 @@
         <div class="container mx-auto px-6">
             <h2 class="text-6xl font-serif font-bold text-center mb-20 text-sage reveal" data-ko="소개" data-en="About">소개
             </h2>
-            <div class="max-w-5xl mx-auto glass-card p-14 rounded-3xl shadow-xl reveal">
+            <div class="max-w-5xl mx-auto glass-card rounded-3xl shadow-xl reveal about-card">
                 <p class="text-xl leading-relaxed text-center text-content about-text"
                     data-ko="디지털과 아날로그가 조화를 이루는 그라데이션처럼, 저는 모든 사람을 위한 디자인을 만듭니다. 신발부터 IoT 디바이스, 가구, 조명까지 다양한 제품 디자인에서 지속가능성과 접근성을 중심에 두고 작업합니다."
                     data-en="Like a gradient where countless colors harmonize in one space, I create designs that embrace everyone. From footwear to IoT devices, furniture, and lighting, I focus on sustainability and accessibility across diverse product design projects.">
