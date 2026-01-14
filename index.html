@@ -122,6 +122,19 @@
             margin-top: 1.5rem;
         }
 
+        /* Modal images styling */
+        .modal-content img {
+            max-height: 240px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 767px) {
+            .modal-content img {
+                max-height: 200px;
+            }
+        }
+
         /* Optimal reading width */
         .text-content {
             max-width: 65ch;
@@ -748,7 +761,7 @@
                 data-en="Projects">프로젝트</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 stagger-children">
                 <div class="project-card rounded-3xl overflow-hidden shadow-xl" onclick="openModal(0)">
-                    <img src="as2.jpg" alt="AROUND speaker" class="h-72 w-full object-cover">
+                    <img src="images/as-thumb.jpg" alt="AROUND speaker" class="h-72 w-full object-cover">
                     <div class="p-8">
                         <span
                             class="inline-block bg-sage/10 text-sage px-4 py-1 rounded-full text-sm mb-4 font-semibold">Product
@@ -1189,7 +1202,22 @@ END:VCARD`;
             const modal = document.getElementById('projectModal');
             const modalBody = document.getElementById('modalBody');
             const desc = currentLang === 'ko' ? project.descKo : project.descEn;
-            let imageHTML = project.image ? `<img src="${project.image}" alt="${project.title}" class="w-full rounded-t-3xl">` : '';
+
+            let imageHTML = '';
+
+            // Special handling for AROUND speaker (index 0) - show 3 detail images in grid
+            if (index === 0) {
+                imageHTML = `
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <img src="images/as-detail1.jpg" alt="AROUND speaker detail 1" class="w-full h-auto rounded-lg shadow-md object-cover" style="max-height: 240px;">
+                    <img src="images/as-detail2.jpg" alt="AROUND speaker detail 2" class="w-full h-auto rounded-lg shadow-md object-cover" style="max-height: 240px;">
+                    <img src="images/as-detail3.jpg" alt="AROUND speaker detail 3" class="w-full h-auto rounded-lg shadow-md object-cover" style="max-height: 240px;">
+                </div>
+                `;
+            } else if (project.image) {
+                imageHTML = `<img src="${project.image}" alt="${project.title}" class="w-full rounded-t-3xl">`;
+            }
+
             modalBody.innerHTML = `
 ${imageHTML}
 <div class="p-10">
