@@ -155,7 +155,7 @@
         /* About section optimization */
         .about-text {
             max-width: 85ch;
-            font-size: 13px;
+            font-size: 11px;
             line-height: 1.7;
         }
 
@@ -170,7 +170,7 @@
             }
 
             .about-text {
-                font-size: 14px;
+                font-size: 12px;
             }
         }
 
@@ -197,7 +197,7 @@
             }
 
             .about-text {
-                font-size: 11px;
+                font-size: 10px;
                 line-height: 1.6;
                 margin-bottom: 1em;
                 max-width: 90ch;
@@ -916,7 +916,7 @@
                 </div>
 
                 <div class="project-card rounded-3xl overflow-hidden shadow-xl" onclick="openModal(11)">
-                    <img src="images/cases-thumb.jpg" alt="Phone & AirPods Cases" class="h-72 w-full object-cover">
+                    <img src="images/shop-thumb.jpg" alt="Phone & AirPods Cases" class="h-72 w-full object-cover">
                     <div class="p-8">
                         <span
                             class="inline-block bg-sage/10 text-sage px-4 py-1 rounded-full text-sm mb-4 font-semibold">Product
@@ -1059,7 +1059,28 @@
 
     <script>
         const projectData = [
-            { title: "AROUND speaker", year: "2023", category: "Product Design | IoT", image: "as1.jpg", descKo: "지금의 디지털 기기와 제품들은 기능 뿐만 아니라 가구, 인테리어로서의 역할 또한 추구되는 디자인 동향을 볼 수 있다. 디지털과 아날로그의 합성어 '디지로그'를 컨셉으로 디지털 기능에 아날로그 디자인을 돋보인 서라운드 스피커를 디자인", descEn: "Today's digital devices serve not just as tools, but as pieces of furniture and interior design. Embracing the concept of DIGILOG—a blend of digital and analog—this surround speaker features analog aesthetics paired with digital functionality." },
+            {
+                title: "AROUND speaker", year: "2023", category: "Product Design | IoT", image: "as1.jpg", descKo: `<div class="space-y-5">
+<p class="text-lg leading-relaxed">지금의 디지털 기기와 제품들은 기능 뿐만 아니라 가구, 인테리어로서의 역할 또한 추구되는 디자인 동향을 볼 수 있다. 디지털과 아날로그의 합성어 '디지로그'를 컨셉으로 디지털 기능에 아날로그 디자인을 돋보인 서라운드 스피커를 디자인.</p>
+<div>
+<h4 class="text-xl font-semibold text-sage mb-3">Concept: DIGILOG</h4>
+<p class="leading-relaxed">디지털과 아날로그의 합성어 '디지로그'. 디지털 기술과 아날로그적 디자인 요소를 융합하여 디지털 기기들이 따라가지 못하거나 아날로그 제품에 향수를 느끼는 사람들을 대상으로 한다.</p>
+</div>
+<div>
+<h4 class="text-xl font-semibold text-sage mb-3">Surround Sound Equipment</h4>
+<p class="leading-relaxed">음의 위상을 조금씩 달리해 내보내고 청취자가 실제 현장에서 음원으로 둘러싸여 있는 느낌을 갖게 하는 '서라운드 기능'이 탑재되어 있어 보다 선명하고 공간감 있는 사운드를 느낄 수 있다.</p>
+</div>
+</div>`, descEn: `<div class="space-y-5">
+<p class="text-lg leading-relaxed">Today's digital devices pursue not only functionality but also roles as furniture and interior design elements. With the concept of DIGILOG—a blend of digital and analog—this surround speaker showcases analog aesthetics paired with digital functionality.</p>
+<div>
+<h4 class="text-xl font-semibold text-sage mb-3">Concept: DIGILOG</h4>
+<p class="leading-relaxed">DIGILOG combines digital technology with analog design elements, targeting those who appreciate analog nostalgia or seek what digital devices cannot provide.</p>
+</div>
+<div>
+<h4 class="text-xl font-semibold text-sage mb-3">Surround Sound Equipment</h4>
+<p class="leading-relaxed">Equipped with surround sound technology that varies audio phases, creating the sensation of being immersed in the source, delivering crisp and spatially rich audio experiences.</p>
+</div>
+</div>` },
             {
                 title: "CAITES Hybrid Shoes", year: "2023", category: "Footwear Design", descKo: `<div class="space-y-6">
 <div>
@@ -1152,7 +1173,48 @@
 </ul>
 </div>
 </div>` },
-            { title: "Earth Saver", year: "2022", category: "Product | Sustainability", descKo: "공간별 맞춤형 업사이클링 분리수거함 시스템. 지속가능한 환경을 위한 디자인입니다.", descEn: "A customized upcycling recycling station system tailored for different spaces, championing sustainable living." },
+            {
+                title: "Earth Saver", year: "2022", category: "Product | Sustainability", descKo: `<div class="space-y-5">
+<div>
+<h4 class="text-xl font-semibold text-sage mb-3">분리수거가 잘 안되는 원인</h4>
+<ul class="list-disc list-inside space-y-2 leading-relaxed pl-4">
+<li>명확하지 않은 분리배출 기준</li>
+<li>변경 후에도 알아보기 어려운 표기법</li>
+<li>분리배출을 하기 어려운 환경</li>
+</ul>
+</div>
+<div>
+<p class="leading-relaxed">제품마다 분리배출 방법이 다르고, 사람마다 분리배출의 기준이 달라 정확하지 않은 분리배출로 인해 재활용이 제대로 이루어지지 않는다. 분리배출 표기법이 바뀔지만 표기가 되어있지 않은 제품이나 표기를 하지 못하는 제품들이 많고, 재질의 구분이 애매하기 때문에 여전히 많은 사람들이 헷갈려한다. 다른 재질의 쓰레기를 한데 모아 버리게 하거나 분리수거함이 제대로 갖춰지지 않아 분리수거를 제대로 할 수 있는 환경이 조성되지 않는다.</p>
+</div>
+<div>
+<h4 class="text-xl font-semibold text-sage mb-3">디자인 시 고려할 사항</h4>
+<ul class="list-disc list-inside space-y-2 leading-relaxed pl-4">
+<li><strong>배치 구조:</strong> 사용자의 수나 설치되는 공간에 맞춰 다양한 구조로 효율성을 높일 수 있는 디자인</li>
+<li><strong>쓰레기통 투입구:</strong> 다양한 쓰레기들을 수용할 수 있는 투입구</li>
+<li><strong>스펙:</strong> 다양한 사람들의 키를 고려한 높이</li>
+</ul>
+</div>
+</div>`, descEn: `<div class="space-y-5">
+<div>
+<h4 class="text-xl font-semibold text-sage mb-3">Why Recycling Fails</h4>
+<ul class="list-disc list-inside space-y-2 leading-relaxed pl-4">
+<li>Unclear separation standards</li>
+<li>Confusing labeling systems even after updates</li>
+<li>Environments that don't support proper sorting</li>
+</ul>
+</div>
+<div>
+<p class="leading-relaxed">Different products require different sorting methods, and varying personal standards lead to improper recycling. Despite updated labeling systems, many products lack proper markings or have ambiguous material classifications, causing ongoing confusion. Mixed waste disposal and inadequate recycling infrastructure create environments where proper sorting is nearly impossible.</p>
+</div>
+<div>
+<h4 class="text-xl font-semibold text-sage mb-3">Design Considerations</h4>
+<ul class="list-disc list-inside space-y-2 leading-relaxed pl-4">
+<li><strong>Modular Structure:</strong> Adaptable configurations for different user volumes and spaces</li>
+<li><strong>Inlet Design:</strong> Openings that accommodate diverse waste types</li>
+<li><strong>Specifications:</strong> Heights designed for people of all sizes</li>
+</ul>
+</div>
+</div>` },
             {
                 title: "VIVID Chair", year: "2022", category: "Furniture Design", descKo: `<div class="space-y-4">
 <p class="leading-relaxed">레고의 강렬하고 선명한 컬러와 조립 형태를 모티브로 하여, 면 분할로 의자의 패턴과 컬러의 다양화로 선택의 재미를 주었다.</p>
@@ -1179,17 +1241,41 @@
             { title: "Faber-Castell", year: "2022", category: "Stationery Design", descKo: "파버카스텔 브랜드 협업 문구 디자인 프로젝트입니다.", descEn: "A collaborative stationery design project with the renowned Faber-Castell brand." },
             { title: "IKEA Co-Living", year: "2021", category: "Interior Design", descKo: "이케아 코리빙 공간 설계 프로젝트. 공유 생활을 위한 최적화된 공간입니다.", descEn: "A space design project for IKEA co-living environments, optimized for shared living experiences." },
             {
-                title: "Shoe Upcycling", year: "2023", category: "Footwear | Sustainability", descKo: `<div class="space-y-4">
+                title: "Shoe Upcycling", year: "2023", category: "Footwear | Sustainability", descKo: `<div class="space-y-5">
 <p class="leading-relaxed">리사이클 대신 소진되지 않을 의류를 사용하여 원래의 것을 새로운, 더 나은 디자인으로 업사이클링. 소재 본래의 특성을 살려 신발로 재탄생.</p>
+<div>
+<h4 class="text-xl font-semibold text-sage mb-3">시장 동향</h4>
+<p class="leading-relaxed">국내를 비롯해 전 세계에서는 패션 및 디자인 분야를 중심으로 플라스틱 업사이클링 시장이 태동되고 있다. 업사이클링 제품에 대한 소비자의 인식과 관심 증가로 기업의 환경적, 사회적 책임에 관한 활동 필요성이 증대되었다. 폐기물 재활용 시장은 2019년 537억 달러에서 2024년 약 692억 달러에 이를 것으로 전망되며, 약 연평균 5.2%의 성장률을 보이고 있다.</p>
+</div>
+<div>
+<h4 class="text-xl font-semibold text-sage mb-3">문제 인식</h4>
+<p class="leading-relaxed">세계적으로 녹색성장을 위한 환경 보호가 중요시되면서 많은 제품들이 개발되고 있다. 하지만 대기업을 제외하고는 큰 영향을 미치지 못하고 있으며, 자주 노출되지 않는 소비자들은 환경의 중요성과 취지를 잊어가는 상황이 반복되고 있다.</p>
+</div>
+<div>
+<h4 class="text-xl font-semibold text-sage mb-3">방향 설정: 업사이클링화</h4>
+<p class="leading-relaxed">지속 가능한 디자인을 위하여 폐타이어나 코르크 같은 친환경 소재로 갑피와 밑창, 깔창 등을 업사이클링하여 업사이클링된 신발을 다시 리사이클할 수 있도록 순환 구조를 만든다. 개발자들은 끔임없이 새로운 소재를 연구하고 개발함과 동시에 소비자들에게 새로운 리사이클 소재를 제시하고 알려, 스스로가 환경에 관심을 가지고 페트병 모으기, 병또2껏 모으기 등의 캠페인 형식으로 직접 참여하는 것을 목표로 한다.</p>
+</div>
 <div>
 <h4 class="text-xl font-semibold text-sage mb-3">Design</h4>
 <p class="leading-relaxed">신발의 갑피 부분을 의류, 가방 등에서 사용할 수 있는 부자재들을 얻고, 아웃솔은 코르크나 폐페트병을 사용하여 지속 가능한 디자인을 제안.</p>
 </div>
-</div>`, descEn: `<div class="space-y-4">
+</div>`, descEn: `<div class="space-y-5">
 <p class="leading-relaxed">Rather than simple recycling, this design upcycles durable textile materials into something new and better, honoring the inherent qualities of each material to create reborn footwear.</p>
 <div>
+<h4 class="text-xl font-semibold text-sage mb-3">Market Trends</h4>
+<p class="leading-relaxed">Globally, the plastic upcycling market is emerging in fashion and design sectors. Growing consumer awareness and interest in upcycling products has heightened corporate environmental and social responsibility. The waste recycling market is projected to grow from $53.7 billion in 2019 to approximately $69.2 billion in 2024, representing an annual growth rate of 5.2%.</p>
+</div>
+<div>
+<h4 class="text-xl font-semibold text-sage mb-3">Identifying the Problem</h4>
+<p class="leading-relaxed">While environmental protection for green growth gains importance worldwide, many developed products have limited impact outside major corporations. Consumers with infrequent exposure repeatedly lose sight of environmental importance and purpose.</p>
+</div>
+<div>
+<h4 class="text-xl font-semibold text-sage mb-3">Direction: Upcycling Footwear</h4>
+<p class="leading-relaxed">For sustainable design, upcycle eco-friendly materials like recycled tires and cork into uppers, soles, and insoles, creating a circular system where upcycled shoes can be recycled again. Developers continuously research new materials while educating consumers, encouraging direct participation through campaigns like collecting PET bottles and caps, fostering environmental awareness.</p>
+</div>
+<div>
 <h4 class="text-xl font-semibold text-sage mb-3">Design Approach</h4>
-<p class="leading-relaxed">The upper is crafted from repurposed materials like clothing and bag components, while the outsole uses cork or recycled PET bottles, proposing truly sustainable design.</p>
+<p class="leading-relaxed">The upper uses repurposed materials from clothing and bags, while the outsole incorporates cork or recycled PET bottles, proposing truly sustainable footwear design.</p>
 </div>
 </div>` },
             { title: "Phone & AirPods Cases", year: "2024-Present", category: "Product | Commercial", descKo: "직접 디자인하여 판매 중인 핸드폰·에어팟 케이스 컬렉션입니다.", descEn: "A collection of phone and AirPods cases I designed and currently sell online." }
@@ -1308,7 +1394,7 @@ END:VCARD`;
                 8: ['fb-thumb'], // Faber-Castell - thumb only
                 9: ['ikea-thumb', 'ikea-detail1'], // IKEA
                 10: ['us-thumb', 'us-detail1'], // Shoe Upcycling
-                11: ['cases-thumb', 'cases-detail1'] // Phone Cases
+                11: ['shop-thumb', 'shop-detail1', 'shop-detail2'] // Phone Cases
             };
 
             const images = imageConfigs[index] || [];
