@@ -155,8 +155,8 @@
         /* About section optimization */
         .about-text {
             max-width: 85ch;
-            font-size: 11px;
-            line-height: 1.7;
+            font-size: 14px !important;
+            line-height: 1.7 !important;
         }
 
         .about-card {
@@ -168,15 +168,15 @@
             body {
                 font-size: 15px;
             }
-
-            .about-text {
-                font-size: 12px;
-            }
         }
 
         @media (min-width: 768px) and (max-width: 1023px) {
             body {
                 font-size: 14px;
+            }
+
+            .about-text {
+                font-size: 13px !important;
             }
         }
 
@@ -197,8 +197,8 @@
             }
 
             .about-text {
-                font-size: 8px;
-                line-height: 1.6;
+                font-size: 12px !important;
+                line-height: 1.65 !important;
                 margin-bottom: 1em;
                 max-width: 90ch;
             }
@@ -663,12 +663,12 @@
                 소개
             </h2>
             <div class="max-w-5xl mx-auto glass-card rounded-3xl shadow-xl reveal about-card">
-                <p class="text-xl leading-relaxed text-center text-content about-text"
+                <p class="leading-relaxed text-center text-content about-text"
                     data-ko="디지털과 아날로그가 조화를 이루는 그라데이션처럼, 저는 모든 사람을 위한 디자인을 만듭니다. 신발부터 IoT 디바이스, 가구, 조명까지 다양한 제품 디자인에서 지속가능성과 접근성을 중심에 두고 작업합니다."
                     data-en="Like a gradient where countless colors harmonize in one space, I create designs that embrace everyone. From footwear to IoT devices, furniture, and lighting, I focus on sustainability and accessibility across diverse product design projects.">
                     디지털과 아날로그가 조화를 이루는 그라데이션처럼, 저는 모든 사람을 위한 디자인을 만듭니다. 신발부터 IoT 디바이스, 가구, 조명까지 다양한 제품 디자인에서 지속가능성과 접근성을
                     중심에 두고 작업합니다.</p>
-                <p class="text-xl leading-relaxed text-center text-content about-text"
+                <p class="leading-relaxed text-center text-content about-text"
                     data-ko="업사이클링, 배리어프리, DIGILOG 철학을 통해 환경과 사람을 먼저 생각하는 디자인을 실현하며, 각 프로젝트에 명확한 개념과 스토리를 담아 실용성과 감성을 동시에 전달합니다."
                     data-en="Through upcycling, barrier-free design, and the DIGILOG philosophy, I bring to life designs that put people and the environment first. Each project tells a clear story, blending practicality with emotion to create meaningful experiences.">
                     업사이클링, 배리어프리, DIGILOG 철학을 통해 환경과 사람을 먼저 생각하는 디자인을 실현하며, 각 프로젝트에 명확한 개념과 스토리를 담아 실용성과 감성을 동시에 전달합니다.
@@ -681,7 +681,7 @@
                                 class="text-gold hover:underline">gusdud4547@naver.com</a></p>
                         <p><a href="https://www.instagram.com/vita_felix___" target="_blank"
                                 class="text-gold hover:underline">@vita_felix___</a></p>
-                        <p class="mt-2 text-sm">010-1758-1923</p>
+                        <p class="mt-2 text-sm">010-4758-4923</p>
                     </div>
                     <div class="text-center p-6 bg-gradient-to-br from-sage/5 to-gold/5 rounded-2xl">
                         <h3 class="font-serif font-semibold text-2xl mb-3 text-sage" data-ko="현재" data-en="Current">현재
@@ -1004,7 +1004,7 @@
                         <h3 class="font-serif font-semibold text-xl mb-2">Instagram</h3>
                         <p class="text-gold group-hover:underline">@vita_felix___</p>
                     </a>
-                    <a href="tel:010-1758-1923" class="group">
+                    <a href="tel:010-4758-4923" class="group">
                         <div
                             class="bg-sage/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
                             <svg class="w-10 h-10 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1014,7 +1014,7 @@
                             </svg>
                         </div>
                         <h3 class="font-serif font-semibold text-xl mb-2" data-ko="전화번호" data-en="Phone">전화번호</h3>
-                        <p class="text-gold group-hover:underline">010-1758-1923</p>
+                        <p class="text-gold group-hover:underline">010-4758-4923</p>
                     </a>
                 </div>
                 <div class="mt-12 text-center">
@@ -1313,7 +1313,7 @@ EMAIL:gusdud4547@naver.com
 URL:https://www.instagram.com/vita_felix___
 URL:https://mobile.a-bly.com/markets/82880/
 TITLE:Product Designer
-TEL:010-1758-1923
+TEL:010-4758-4923
 END:VCARD`;
             const blob = new Blob([vcard], { type: 'text/vcard' });
             const url = URL.createObjectURL(blob);
