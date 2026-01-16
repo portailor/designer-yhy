@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -21,13 +21,13 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        'serif': ['Montserrat', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
                         'sans': ['Noto Sans KR', 'sans-serif'],
                     },
                     colors: {
-                        'sage': '#5A7C7D',
-                        'gold': '#C9A86A',
-                        'cream': '#F5F1ED',
+                        sage: '#5A7C7D',
+                        gold: '#B8956A',
+                        cream: '#F5F3EF',
                     }
                 }
             }
@@ -45,15 +45,20 @@
             scroll-behavior: smooth;
         }
 
-        body {
+        body,
+        p {
             font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 300;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
             color: #2D2D2D;
             line-height: 1.8;
             background: #FFFBF9;
             overflow-x: hidden;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
             word-break: keep-all;
             overflow-wrap: break-word;
             hyphens: none;
@@ -86,23 +91,24 @@
         h4,
         h5,
         h6 {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Playfair Display', serif;
+            font-weight: 300;
             line-height: 1.4;
-            letter-spacing: 0.01em;
+            letter-spacing: 0.02em;
             word-break: keep-all;
         }
 
         /* Project card titles - elegant serif font */
         .project-card h3 {
-            font-family: 'Cormorant Garamond', 'Bodoni Moda', serif;
-            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
             letter-spacing: 0.02em;
         }
 
         /* Modal project titles - elegant serif font */
         .modal-content h2 {
-            font-family: 'Cormorant Garamond', 'Bodoni Moda', serif;
-            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
             letter-spacing: 0.01em;
         }
 
